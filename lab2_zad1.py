@@ -3,7 +3,8 @@ from collections import Counter
 def analyzeText(text):
     paragraphs = text.split('\n')
     sentences = text.split(".")
-    words = [word.strip('.,!?()[]{};:"\'') for word in text.lower().split() if word.strip('.,!?()[]{};:"\'')]
+    words = [word.strip('.,!?()[]{};:"\'') for word in text.lower().split() if word.strip('.,!?()[]{};:"\'')]  
+    # zmiana tekstu na male litery, usuwanie znaków - (apple. na apple)
 
     print(f"Liczba akapitów: {len(paragraphs)- 2}")  # odjęcie 2 bo liczy """ jako akapit na poczatku i na koncu
     print(f"Liczba zdań: {len(sentences)-1}")  # -1 bo sentences to lista elementow rozdzielonych kropka i na koncu
@@ -22,7 +23,7 @@ def analyzeText(text):
 
     for word in words:
         # przechodzenie po slowach i sprawdzenie czy slowo zaczyna sie na "a"
-        if word == 'a':  # omijanie slowa "a"
+        if word == 'a':  # omijanie samego "a" bo nie ma co odwracać
             break
         if word.lower().startswith('a'):
             reverse_a_words.append(word[::-1])  # gdy slowo zaczyna się na "a" odwraca i  dodaje do listy
