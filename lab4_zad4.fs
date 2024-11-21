@@ -1,7 +1,7 @@
 ﻿open System
 open System.Collections.Generic
 
-// Definicja rekordu reprezentującego konto bankowe
+// rekord konto bankowe
 type Account = {
     AccountNumber: string
     mutable Balance: decimal
@@ -62,7 +62,7 @@ let displayBalance() =
     else
         printfn "Nie znaleziono konta o podanym numerze."
 
-// Menu interakcji z użytkownikiem
+// interakcja z użytkownikiem
 let rec menu() =
     printfn "1. Utwórz konto"
     printfn "2. Depozytuj środki"
